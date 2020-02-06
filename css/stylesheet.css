@@ -1,0 +1,249 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #e6e6e6;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*-----------------------------------------------------Top Nav---*/
+#topnav {
+    border: 2px solid green;
+    width: 100%;
+    height: 40px;
+}
+
+.pagination {
+    display: inline-block;
+    float: right;
+}
+
+.history-icon {
+    display: none;
+    float: right;
+    padding: 5px 8px;
+}
+
+#historyIconImg {
+    width: 20px;
+    height: 20px;
+    color: black;
+}
+
+.history-icon:hover {
+    background-color: #ccc;
+}
+
+.history-icon:visited {
+}
+
+.pagination a {
+    text-decoration: none;
+    float: right;
+    color: black;
+    margin: 4px 8px;
+    /* padding:8px 10px; */
+}
+
+    .pagination a.active {
+        border-bottom: 3px solid blue;
+    }
+
+    .pagination a:focus:not(active) {
+        border-bottom: none;
+        border-bottom: 3px solid blue;
+    }
+/*------------------------------------------------------top-row table--*/
+/*hide thead stop row of calculator*/
+.maintable tr td.left-column {
+    display: none;
+}
+/*<!--  ---------------------------------------------side column--->*/
+.recyclebin-icon {
+    /*display:none;*/
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+    .recyclebin-icon:hover {
+        background-color: #ccc;
+    }
+/*-----------------------------------------------------memory side--*/
+.memory-side{
+display:inline-block;
+font-size:14px;
+font-weight:bold;
+}
+#memory{
+    display:none;
+}
+/*---------------------------------------------Column-*/
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+}
+
+    /*right column */
+    .column.side {
+        width: 30%;
+        border: 2px solid red;
+        position: relative;
+        height:500px;
+    }
+
+    /* Middle column */
+    .column.middle {
+        width: 70%;
+        border: 2px solid yellow;
+        /*height:auto;*/
+    }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*---------------------------------------------input Row--*/
+.input-row {
+    width: 100%;
+    border: 2px solid blue;
+    height: 90px;
+}
+
+    .input-row input {
+        display: block;
+        float: right;
+        clear: both;
+        background-color: #e6e6e6;
+        height: 40px;
+        font-weight: bold;
+        font-size: 32px;
+        text-align: right;
+        border: none;
+       
+    }
+    /*.input-row input:focus{
+        border:none;
+    }*/
+    /*---------------------------------------------Memory table Row---*/
+    #memory-buttom {
+        display: none;
+    }
+
+.memory-row {
+    border-collapse: collapse;
+    /*border: 2px solid orange;*/
+}
+
+    .memory-row div {
+        border: none;
+        padding: 10px 30px;
+        background-color: #e6e6e6;
+        float: left;
+    }
+
+        .memory-row div:hover {
+            background-color: #ccc;
+        }
+/*-----------------------------------------------Tooltip--*/
+.tooltip {
+    position: relative;
+    font-size: 14px;
+}
+
+    .tooltip .tooltip-text {
+        visibility: hidden;
+        width: 140px;
+        background-color: #e6e6e6;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0px;
+        font-size: 12px;
+        /*transition-delay: 1s;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;*/
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 100%;
+        margin-left: -80%;
+    }
+
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+    }
+/*-------------------------------------------main table-----*/
+
+
+
+.maintable {
+    border: 1px solid groove;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .maintable td {
+        padding: 18px 40px;
+        border: 2px solid #ddd;
+        background-color: #fafafa;
+        text-align: center;
+    }
+
+        .maintable td:hover {
+            background-color: #ccc;
+        }
+
+        .maintable td:hover {
+            background-color: #ccc;
+        }
+
+    .maintable #equal:hover {
+        background-color: #4599db;
+    }
+
+    .maintable .OperationButton {
+        background-color: #f0f0f0;
+    }
+
+/*------------------------------------------------------media----*/
+@media screen and (max-width: 600px) {
+    .pagination a {
+        display: none;
+    }
+
+    #memory-buttom {
+        display: inline-block;
+    }
+
+    .history-icon {
+        display:block;
+    }
+
+    .column.side, .column.middle {
+        width: 100%;
+        height: 100%;
+    }
+    /*.column.middl.maintable{
+        width:auto;
+    }*/
+    .column.side {
+        display: none;
+        min-height: 468px;
+    }
+   .maintable tr td.left-column{
+       display:table-cell;
+    
+    }
+     #toprow{
+        display:none;
+    }
+}
