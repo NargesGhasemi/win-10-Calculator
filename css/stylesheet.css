@@ -1,25 +1,61 @@
 
-
 * {
     box-sizing: border-box;
 }
 
-body {
+body, html {
     margin: 0;
     background-color: #e6e6e6;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    /*border-top: 2px solid aqua;*/
+    min-height: 500px;
+    min-width: 320px;
+    width: 100%;
+}
+/*------------------------------------------------------Header-*/
+header {
+    height: 40px;
+    /*border: 2px solid brown;*/
+    width: 100%;
+}
+
+    header span {
+        padding: 6px 10px;
+     font-size:14px;
+    }
+
+
+header span img {
+    float: right;
+    height: 80%;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+    header span img:hover {
+        background-color: #ccc;
+    }
+
+/*------------------------------------------------------Main Row---*/
+.row {
+    width: 100%;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: row;
 }
 /*-----------------------------------------------------Top Nav---*/
-#topnav {
-    border: 2px solid green;
+.topnav {
+    /*border: 2px solid green;*/
     width: 100%;
-    height: 40px;
+    height: 9%;
+    padding: 5px;
 }
 
 .pagination {
     display: inline-block;
-    float: right;
+    float: left;
 }
 
 .history-icon {
@@ -45,8 +81,8 @@ body {
     text-decoration: none;
     float: right;
     color: black;
-    margin: 4px 8px;
-    /* padding:8px 10px; */
+    margin: 4px 6px;
+    font-size: 16px;
 }
 
     .pagination a.active {
@@ -57,103 +93,60 @@ body {
         border-bottom: none;
         border-bottom: 3px solid blue;
     }
-/*------------------------------------------------------top-row table--*/
-/*hide thead stop row of calculator*/
-.maintable tr td.left-column {
-    display: none;
-}
-/*<!--  ---------------------------------------------side column--->*/
-.recyclebin-icon {
-    /*display:none;*/
-    padding: 10px 15px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-    .recyclebin-icon:hover {
-        background-color: #ccc;
-    }
-/*-----------------------------------------------------memory side--*/
-.memory-side{
-display:inline-block;
-font-size:14px;
-font-weight:bold;
-}
-#memory{
-    display:none;
-}
-/*---------------------------------------------Column-*/
-/* Create three unequal columns that floats next to each other */
-.column {
-    float: left;
-}
-
-    /*right column */
-    .column.side {
-        width: 30%;
-        border: 2px solid red;
-        position: relative;
-        height:500px;
-    }
-
-    /* Middle column */
-    .column.middle {
-        width: 70%;
-        border: 2px solid yellow;
-        /*height:auto;*/
-    }
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 /*---------------------------------------------input Row--*/
 .input-row {
     width: 100%;
-    border: 2px solid blue;
-    height: 90px;
+    /*border: 2px solid blue;*/
+    height: 20%;
 }
 
-    .input-row input {
+    .input-row div {
         display: block;
         float: right;
         clear: both;
         background-color: #e6e6e6;
-        height: 40px;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 44px;
         text-align: right;
-        border: none;
-       
+        /*border: 2px solid red;*/
     }
-    /*.input-row input:focus{
+
+#result {
+}
+/*.input-row input:focus{
         border:none;
     }*/
-    /*---------------------------------------------Memory table Row---*/
-    #memory-buttom {
-        display: none;
-    }
+/*---------------------------------------------Memory table Row---*/
+#memory-Store {
+    display: none;
+}
 
 .memory-row {
     border-collapse: collapse;
-    /*border: 2px solid orange;*/
+    padding: 5px;
+    /* border: 2px solid orange; */
+    height: 10%;
+    width: 100%;
+   
 }
 
-    .memory-row div {
+    .memory-row .memory-btn {
         border: none;
-        padding: 10px 30px;
+        padding: 7px 0;
         background-color: #e6e6e6;
         float: left;
+        width: 15%;
+        justify-content: center;
+        display: flex;
+        height: 30px;
+        margin-top: 22px;
     }
 
         .memory-row div:hover {
             background-color: #ccc;
         }
-/*-----------------------------------------------Tooltip--*/
+/*-----------------------------------------------Memory Tooltip--*/
 .tooltip {
     position: relative;
     font-size: 14px;
@@ -181,18 +174,24 @@ font-weight:bold;
     .tooltip:hover .tooltip-text {
         visibility: visible;
     }
-/*-------------------------------------------main table-----*/
+/*------------------------------------------------------top-row table--*/
+#toprow {
+    display: none;
+}
 
-
+/*--------------------------------------------------main table-----*/
 
 .maintable {
-    border: 1px solid groove;
+    border: 2px solid groove;
     width: 100%;
     border-collapse: collapse;
+    height: 60%;
 }
 
     .maintable td {
-        padding: 18px 40px;
+        /*padding: 25px 45px;*/
+        width:20%;
+        height:20%;
         border: 2px solid #ddd;
         background-color: #fafafa;
         text-align: center;
@@ -214,36 +213,89 @@ font-weight:bold;
         background-color: #f0f0f0;
     }
 
+/*< ---------------------------------------------side column--->*/
+.recyclebin-icon {
+    /*display:none;*/
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+    .recyclebin-icon:hover {
+        background-color: #ccc;
+    }
+/*-----------------------------------------------------memory side--*/
+.memory-side {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 11px;
+}
+
+#memory {
+    display: none;
+}
+/*---------------------------------------------Column-*/
+
+.column {
+    float: left;
+}
+
+    /*right column */
+    .column.side {
+        width: 25%;
+        /*border: 2px solid red;*/
+        position: relative;
+    }
+
+    /* Middle column */
+    .column.middle {
+        width: 75%;
+        /*border: 2px solid yellow;*/
+    }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /*------------------------------------------------------media----*/
 @media screen and (max-width: 600px) {
     .pagination a {
         display: none;
     }
 
-    #memory-buttom {
-        display: inline-block;
+    #memory-Store {
+        display: flex;
     }
 
     .history-icon {
-        display:block;
+        display: block;
     }
 
     .column.side, .column.middle {
         width: 100%;
         height: 100%;
     }
-    /*.column.middl.maintable{
-        width:auto;
-    }*/
+
     .column.side {
         display: none;
         min-height: 468px;
     }
-   .maintable tr td.left-column{
-       display:table-cell;
-    
+
+    .maintable tr td.left-column {
+        /*display:table-cell;*/
+        display: none;
     }
-     #toprow{
-        display:none;
+
+    #toprow {
+        display: table-row;
+    }
+
+    .maintable td {
+        height: 16.66%;
     }
 }
