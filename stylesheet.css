@@ -276,7 +276,7 @@ header span img {
 }
 
 /*------------------------------------------------------media----*/
-@media screen and (max-width: 600px){
+@media screen and  (max-height: 650px) and (max-width:500px) {
     .pagination a {
         display: none;
     }
@@ -312,31 +312,3 @@ header span img {
     }
 }
 
-@media screen and (max-height: 650px) {
-    #toprow {
-        display: table-row;
-    }
-    .maintable td {
-        height: 16.66%;
-    }
-    .maintable tr td.left-column {
-        display: none;
-    }
-}
-
-/*@media screen and (max-height: 650px) and (max-width:500px) {
-    #toprow {
-        display: table-row;
-    }
-
-    .maintable td {
-        height: 16.66%;
-    }
-
-    .maintable tr td.left-column {
-        display: none;
-    }
-   .memory-row div.memory-btn{
-        width:16.6%;
-    }
-}*/
